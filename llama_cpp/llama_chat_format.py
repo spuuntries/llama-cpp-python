@@ -212,7 +212,8 @@ class Jinja2ChatFormatter(ChatFormatter):
         self._environment = ImmutableSandboxedEnvironment(
             loader=jinja2.BaseLoader(),
             trim_blocks=True,
-            lstrip_blocks=True,
+            lstrip_blocks=True, 
+            extensions=["jinja2.ext.loopcontrols"]
         ).from_string(self.template)
 
     @staticmethod
